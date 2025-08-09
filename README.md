@@ -1,4 +1,7 @@
 # Tau Ceti Classic
+
+Tau Ceti 2016 года (до охуительных ремапов бокса) работающая на бульёнде 516. Если покопаться, что-то может быть сломано, а так вроде норм.
+
 [![Slack](http://slack.tauceti.ru/badge.svg)](http://slack.tauceti.ru/)
 [![tauceti.ru](https://img.shields.io/badge/site-tauceti.ru-blue.svg)](http://tauceti.ru/)
 
