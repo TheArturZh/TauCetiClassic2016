@@ -330,7 +330,7 @@ var/list/admin_verbs_mentor = list(
 		/client/proc/count_objects_all,
 		/client/proc/cmd_assume_direct_control,
 		/client/proc/startSinglo,
-		/client/proc/fps,
+		// /client/proc/fps,
 		/client/proc/cmd_admin_grantfullaccess,
 		/client/proc/splash,
 		/client/proc/cmd_admin_areatest
