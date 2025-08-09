@@ -1,3 +1,6 @@
+// OPEN is a define
+/var/const/CLOSED = 2
+
 #define FIREDOOR_CLOSED_MOD	1.6	//Above everything
 #define FIREDOOR_MAX_PRESSURE_DIFF 25 // kPa
 #define FIREDOOR_MAX_TEMP 50 // °C
