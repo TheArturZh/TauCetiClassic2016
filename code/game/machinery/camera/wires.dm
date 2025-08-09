@@ -128,7 +128,7 @@
 	t1 += "<br>\n[(alarm_on ? "The alarm light is on." : "The alarm light is off.")]"
 
 	t1 += "<p><a href='?src=\ref[src];close2=1'>Close</a></p>\n"
-	user << browse(t1, "window=wires")
+	user << browse("<html>[t1]</html>", "window=wires")
 	onclose(user, "wires")
 
 

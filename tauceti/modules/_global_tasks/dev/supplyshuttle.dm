@@ -372,7 +372,7 @@ var/list/mechtoys = list(
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR><BR>
 		<A href='?src=\ref[user];mach_close=computer'>Close</A>"}
 
-	user << browse(dat, "window=computer;size=575x450")
+	user << browse("<html>[dat]</html>", "window=computer;size=575x450")
 	onclose(user, "computer")
 	return
 
@@ -498,7 +498,7 @@ var/list/mechtoys = list(
 		\n<A href='?src=\ref[src];vieworders=1'>View orders</A><BR>\n<BR>
 		\n<A href='?src=\ref[user];mach_close=computer'>Close</A>"}
 
-	user << browse(dat, "window=computer;size=575x450")
+	user << browse("<html>[dat]</html>", "window=computer;size=575x450")
 	onclose(user, "computer")
 	return
 

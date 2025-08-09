@@ -53,7 +53,7 @@
 		dat += text("Bananium coins: [amt_clown] <A href='?src=\ref[src];remove=clown'>Remove one</A><br>")
 	if (amt_clown)
 		dat += text("Platinum coins: [amt_clown] <A href='?src=\ref[src];remove=platinum'>Remove one</A><br>")
-	user << browse("[dat]", "window=moneybag")
+	user << browse("<html>[dat]</html>", "window=moneybag")
 
 /obj/item/weapon/moneybag/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()

@@ -399,7 +399,7 @@
 		else
 			dat = "<font color='red'> Error: No Body Scanner connected.</font>"
 	dat += text("<BR><BR><A href='?src=\ref[];mach_close=scanconsole'>Close</A>", user)
-	user << browse(dat, "window=scanconsole;size=430x600")
+	user << browse("<html>[dat]</html>", "window=scanconsole;size=430x600")
 	return
 
 /obj/machinery/body_scanconsole/Topic(href, href_list)

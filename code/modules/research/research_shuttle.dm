@@ -73,7 +73,7 @@ proc/move_research_shuttle()
 	src.add_fingerprint(usr)
 	var/dat = "<center>Research shuttle: <b><A href='?src=\ref[src];move=1'>Send</A></b></center><br>"
 
-	user << browse("[dat]", "window=researchshuttle;size=200x100")
+	user << browse("<html>[dat]</html>", "window=researchshuttle;size=200x100")
 
 /obj/machinery/computer/research_shuttle/Topic(href, href_list)
 	if(..())

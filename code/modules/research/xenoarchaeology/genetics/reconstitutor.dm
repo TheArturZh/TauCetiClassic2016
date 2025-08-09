@@ -171,7 +171,7 @@ datum/genesequence
 	dat += "<br>"
 	dat += "<hr>"
 	dat += "<a href='?src=\ref[src];close=1'>Close</a>"
-	user << browse(dat, "window=reconstitutor;size=600x500")
+	user << browse("<html>[dat]</html>", "window=reconstitutor;size=600x500")
 	user.set_machine(src)
 	onclose(user, "reconstitutor")
 

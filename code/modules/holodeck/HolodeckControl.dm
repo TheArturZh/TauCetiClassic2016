@@ -94,7 +94,7 @@ var/global/list/holodeck_programs = list(
 	else
 		dat += "Gravity is <A href='?src=\ref[src];gravity=1'><font color=blue>(OFF)</font></A><BR>"
 
-	user << browse(dat, "window=computer;size=400x500")
+	user << browse("<html>[dat]</html>", "window=computer;size=400x500")
 	onclose(user, "computer")
 
 	return

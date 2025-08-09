@@ -229,7 +229,7 @@
 
 	user.machine = src
 
-	var/t = "<TT><B>Gas Turbine Generator</B><HR><PRE>"
+	var/t = "<html><TT><B>Gas Turbine Generator</B><HR><PRE>"
 
 	t += "Generated power : [round(lastgen)] W<BR><BR>"
 
@@ -239,7 +239,7 @@
 
 	t += "</PRE><HR><A href='?src=\ref[src];close=1'>Close</A>"
 
-	t += "</TT>"
+	t += "</TT></html>"
 	user << browse(t, "window=turbine")
 	onclose(user, "turbine")
 
@@ -324,7 +324,7 @@
 		if(!compressor)
 			dat += "<A href='?src=\ref[src];search=1'>Search for compressor</A>"
 
-	user << browse(dat, "window=computer;size=400x500")
+	user << browse("<html>[dat]</html>", "window=computer;size=400x500")
 	onclose(user, "computer")
 	return
 

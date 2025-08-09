@@ -135,7 +135,7 @@ proc/move_mining_shuttle()
 	dat += "<b><A href='?src=\ref[src];move=[1]'>Send</A></b></center>"
 
 
-	user << browse("[dat]", "window=miningshuttle;size=200x150")
+	user << browse("<html>[dat]</html>", "window=miningshuttle;size=200x150")
 
 /obj/machinery/computer/mining_shuttle/Topic(href, href_list)
 	if(..())

@@ -57,7 +57,7 @@
 <BR>
 <B>No Patient Detected</B>
 "}
-	user << browse(dat, "window=op")
+	user << browse("<html>[dat]</html>", "window=op")
 	onclose(user, "op")
 
 

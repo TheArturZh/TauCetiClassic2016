@@ -195,13 +195,13 @@ rcd light flash thingy on matter drain
 	src.possible_modules += new /datum/AI_Module/small/upgrade_camera
 
 /datum/AI_Module/module_picker/proc/use(user as mob)
-	var/dat
+	var/dat = "<html>"
 	if (src.temp)
-		dat = "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
+		dat += "[src.temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
 	else if(src.processing_time <= 0)
-		dat = "<B> No processing time is left available. No more modules are able to be chosen at this time."
+		dat += "<B> No processing time is left available. No more modules are able to be chosen at this time."
 	else
-		dat = "<B>Select use of processing time: (currently [src.processing_time] left.)</B><BR>"
+		dat += "<B>Select use of processing time: (currently [src.processing_time] left.)</B><BR>"
 		dat += "<HR>"
 		dat += "<B>Install Module:</B><BR>"
 		dat += "<I>The number afterwards is the amount of processing time it consumes.</I><BR>"
@@ -211,6 +211,7 @@ rcd light flash thingy on matter drain
 			dat += "<A href='byond://?src=\ref[src];[module.mod_pick_name]=1'>[module.module_name]</A> (15)<BR>"
 		dat += "<HR>"
 
+	dat += "</html>"
 	user << browse(dat, "window=modpicker")
 	onclose(user, "modpicker")
 	return

@@ -111,7 +111,7 @@
 		t1 += text("<br>\n[(src.lawupdate ? "The LawSync light is on." : "The LawSync light is off.")]<br>\n[(src.connected_ai ? "The AI link light is on." : "The AI link light is off.")]")
 		t1 += text("<br>\n[((!isnull(src.camera) && src.camera.status == 1) ? "The Camera light is on." : "The Camera light is off.")]<br>\n")
 		t1 += text("<p><a href='?src=\ref[src];close2=1'>Close</a></p>\n")
-		user << browse(t1, "window=borgwires")
+		user << browse("<html>[t1]</html>", "window=borgwires")
 		onclose(user, "borgwires")
 
 /mob/living/silicon/robot/Topic(href, href_list)

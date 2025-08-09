@@ -38,12 +38,12 @@ obj/machinery/computer/cryopod/attack_hand(mob/user = usr)
 	if (!( ticker ))
 		return
 
-	dat += "<hr/><br/><b>Cryogenic Oversight Control</b><br/>"
+	dat += "<html><hr/><br/><b>Cryogenic Oversight Control</b><br/>"
 	dat += "<i>Welcome, [user.real_name].</i><br/><br/><hr/>"
 	dat += "<a href='?src=\ref[src];log=1'>View storage log</a>.<br>"
 	dat += "<a href='?src=\ref[src];item=1'>Recover object</a>.<br>"
 	dat += "<a href='?src=\ref[src];allitems=1'>Recover all objects</a>.<br>"
-	dat += "<a href='?src=\ref[src];crew=1'>Revive crew</a>.<br/><hr/>"
+	dat += "<a href='?src=\ref[src];crew=1'>Revive crew</a>.<br/><hr/></html>"
 
 	user << browse(dat, "window=cryopod_console")
 	onclose(user, "cryopod_console")
@@ -59,10 +59,10 @@ obj/machinery/computer/cryopod/Topic(href, href_list)
 
 	if(href_list["log"])
 
-		var/dat = "<b>Recently stored crewmembers</b><br/><hr/><br/>"
+		var/dat = "<html><b>Recently stored crewmembers</b><br/><hr/><br/>"
 		for(var/person in frozen_crew)
 			dat += "[person]<br/>"
-		dat += "<hr/>"
+		dat += "<hr/></html>"
 
 		user << browse(dat, "window=cryolog")
 

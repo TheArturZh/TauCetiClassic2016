@@ -277,7 +277,7 @@ display round(lastgen) and phorontank amount
 	dat += text("Power current: [(powernet == null ? "Unconnected" : "[avail()]")]<br>")
 	dat += text("Heat: [heat]<br>")
 	dat += "<br><A href='?src=\ref[src];action=close'>Close</A>"
-	user << browse("[dat]", "window=port_gen")
+	user << browse("<html>[dat]</html>", "window=port_gen")
 	onclose(user, "port_gen")
 
 /obj/machinery/power/port_gen/pacman/Topic(href, href_list)

@@ -129,9 +129,9 @@ var/list/mechtoys = list(
 	if(..())
 		return
 	user.set_machine(src)
-	var/dat
+	var/dat = "<html>"
 	if(temp)
-		dat = temp
+		dat += temp
 	else
 		dat += {"<BR><B>Supply shuttle</B><HR>
 		Location: [SSshuttle.moving ? "Moving to station ([SSshuttle.eta] Mins.)":SSshuttle.at_station ? "Station":"Dock"]<BR>
@@ -141,6 +141,7 @@ var/list/mechtoys = list(
 		<A href='?src=\ref[src];viewrequests=1'>View requests</A><BR><BR>
 		<A href='?src=\ref[user];mach_close=computer'>Close</A>"}
 
+	dat += "</html>"
 	user << browse(dat, "window=computer;size=575x450")
 	onclose(user, "computer")
 	return

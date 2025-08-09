@@ -186,7 +186,7 @@
 	slot_flags = SLOT_BELT
 
 /obj/item/device/destTagger/proc/openwindow(mob/user as mob)
-	var/dat = "<tt><center><h1><b>TagMaster 2.3</b></h1></center>"
+	var/dat = "<html><tt><center><h1><b>TagMaster 2.3</b></h1></center>"
 
 	dat += "<table style='width:100%; padding:4px;'><tr>"
 	for(var/i = 1, i <= tagger_locations.len, i++)
@@ -195,7 +195,7 @@
 		if (i%4==0)
 			dat += "</tr><tr>"
 
-	dat += "</tr></table><br>Current Selection: [currTag ? currTag : "None"]</tt>"
+	dat += "</tr></table><br>Current Selection: [currTag ? currTag : "None"]</tt></html>"
 
 	user << browse(dat, "window=destTagScreen;size=450x350")
 	onclose(user, "destTagScreen")

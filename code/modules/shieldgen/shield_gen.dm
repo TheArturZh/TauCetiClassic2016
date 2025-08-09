@@ -136,7 +136,7 @@
 	t += "<hr>"
 	t += "<A href='?src=\ref[src]'>Refresh</A> "
 	t += "<A href='?src=\ref[src];close=1'>Close</A><BR>"
-	user << browse(t, "window=shield_generator;size=500x400")
+	user << browse("<html>[t]</html>", "window=shield_generator;size=500x400")
 	user.set_machine(src)
 
 /obj/machinery/shield_gen/process()

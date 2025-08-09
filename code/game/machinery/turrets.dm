@@ -403,7 +403,7 @@
 		user << text("Turret badly positioned - loc.loc is [].", loc)
 		return
 	var/area/area = loc
-	var/t = "<TT><B>Turret Control Panel</B> ([area.name])<HR>"
+	var/t = "<html><TT><B>Turret Control Panel</B> ([area.name])<HR>"
 
 	if(src.locked && (!istype(user, /mob/living/silicon)))
 		t += "<I>(Swipe ID card to unlock control panel.)</I><BR>"
@@ -411,6 +411,7 @@
 		t += text("Turrets [] - <A href='?src=\ref[];toggleOn=1'>[]?</a><br>\n", src.enabled?"activated":"deactivated", src, src.enabled?"Disable":"Enable")
 		t += text("Currently set for [] - <A href='?src=\ref[];toggleLethal=1'>Change to []?</a><br>\n", src.lethal?"lethal":"stun repeatedly", src,  src.lethal?"Stun repeatedly":"Lethal")
 
+	t += "</html>"
 	user << browse(t, "window=turretid")
 	onclose(user, "turretid")
 

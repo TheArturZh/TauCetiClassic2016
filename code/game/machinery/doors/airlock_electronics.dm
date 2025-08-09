@@ -54,7 +54,7 @@
 
 		t1 += text("<p><a href='?src=\ref[];close=1'>Close</a></p>\n", src)
 
-		user << browse(t1, "window=airlock_electronics")
+		user << browse("<html>[t1]</html>", "window=airlock_electronics")
 		onclose(user, "airlock")
 
 	Topic(href, href_list)

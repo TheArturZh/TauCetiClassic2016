@@ -76,7 +76,7 @@
 				dat += {"<a href='byond://?src=\ref[src];choice=Radio'>[A.aiRadio.disabledAi ? "Enable" : "Disable"] Subspace Transceiver</a>"}
 				dat += "<br>"
 				dat += {"<a href='byond://?src=\ref[src];choice=Close'> Close</a>"}
-		user << browse(dat, "window=aicard")
+		user << browse("<html>[dat]</html>", "window=aicard")
 		onclose(user, "aicard")
 		return
 

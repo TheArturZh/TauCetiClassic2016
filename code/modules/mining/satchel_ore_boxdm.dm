@@ -99,7 +99,7 @@
 		dat += text("Strange rocks: [amt_strange]<br>")
 
 	dat += text("<br><br><A href='?src=\ref[src];removeall=1'>Empty box</A>")
-	user << browse("[dat]", "window=orebox")
+	user << browse("<html>[dat]</html>", "window=orebox")
 	return
 
 /obj/structure/ore_box/examine(mob/user)

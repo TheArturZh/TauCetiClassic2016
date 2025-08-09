@@ -17,11 +17,11 @@
 
 /obj/item/weapon/spellbook/attack_self(mob/user as mob)
 	user.set_machine(src)
-	var/dat
+	var/dat = "<html>"
 	if(temp)
-		dat = "[temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
+		dat += "[temp]<BR><BR><A href='byond://?src=\ref[src];temp=1'>Clear</A>"
 	else
-		dat = "<B>The Book of Spells:</B><BR>"
+		dat += "<B>The Book of Spells:</B><BR>"
 		dat += "Spells left to memorize: [uses]<BR>"
 		dat += "<HR>"
 		dat += "<B>Memorize which spell:</B><BR>"
@@ -59,6 +59,8 @@
 		dat += "<HR>"
 		if(op)
 			dat += "<A href='byond://?src=\ref[src];spell_choice=rememorize'>Re-memorize Spells</A><BR>"
+
+	dat += "</html>"
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return

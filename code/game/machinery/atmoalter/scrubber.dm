@@ -173,7 +173,7 @@ Power regulator: <A href='?src=\ref[src];volume_adj=-1000'>-</A> <A href='?src=\
 <A href='?src=\ref[user];mach_close=scrubber'>Close</A><BR>
 "}
 
-	user << browse(output_text, "window=scrubber;size=600x300")
+	user << browse("<html>[output_text]</html>", "window=scrubber;size=600x300")
 	onclose(user, "scrubber")
 	return
 

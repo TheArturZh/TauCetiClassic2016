@@ -62,7 +62,7 @@
 		dat +=	"<br><b>Back:</b> <a href='?src=\ref[src];add_inv=back'>Nothing</a>"
 	dat += "<br><a href='?src=\ref[user];mach_close=mob[type]'>Close</a>"
 
-	user << browse(dat, text("window=mob[];size=325x500", type))
+	user << browse("<html>[dat]</html>", text("window=mob[];size=325x500", type))
 	onclose(user, "mob[type]")
 	return
 
