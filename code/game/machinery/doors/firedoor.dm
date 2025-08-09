@@ -1,6 +1,3 @@
-/var/const/OPEN = 1
-/var/const/CLOSED = 2
-
 #define FIREDOOR_CLOSED_MOD	1.6	//Above everything
 #define FIREDOOR_MAX_PRESSURE_DIFF 25 // kPa
 #define FIREDOOR_MAX_TEMP 50 // °C
@@ -281,10 +278,10 @@
 	if(operating || stat & NOPOWER || !nextstate)
 		return
 	switch(nextstate)
-		if(OPEN)
+		if(1)
 			nextstate = null
 			open()
-		if(CLOSED)
+		if(2)
 			nextstate = null
 			close()
 	return

@@ -352,8 +352,8 @@
 			L << sound(sound, repeat = 0, wait = 0, volume = 25, channel = 1)
 			L.client.played = 1
 			spawn(600)			//ewww - this is very very bad
-				if(L.&& L.client)
-					L.client.played = 0
+			if(L && L.client)
+				L.client.played = 0
 
 /area/proc/gravitychange(var/gravitystate = 0, var/area/A)
 
@@ -374,7 +374,7 @@
 		var/mob/living/carbon/human/H = mob
 		if((istype(H.shoes, /obj/item/clothing/shoes/magboots) && (H.shoes.flags & NOSLIP)))
 			return
-		if((istype(H.wear_suit, /obj/item/clothing/suit/space/rig) && (H.wear_suit.flags & NOSLIP))) //Люди в скафандре с включенными магбутами
+		if((istype(H.wear_suit, /obj/item/clothing/suit/space/rig) && (H.wear_suit.flags & NOSLIP))) //пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 			return
 
 		if(H.m_intent == "run")
