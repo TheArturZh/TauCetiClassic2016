@@ -154,8 +154,8 @@ proc/slur(phrase)
 			if(lletter=="s")	newletter="ch"
 			if(lletter=="a")	newletter="ah"
 			if(lletter=="c")	newletter="k"
-			if(lletter=="ч")	newletter="щ" //246->249
-			if(lletter=="е")	newletter="и" //229->232
+			if(lletter=="пїЅ")	newletter="пїЅ" //246->249
+			if(lletter=="пїЅ")	newletter="пїЅ" //229->232
 		switch(rand(1,15))
 			if(1 to 4)
 				newletter = "[lowertext_plus(newletter)]"
@@ -165,7 +165,7 @@ proc/slur(phrase)
 		newphrase+="[newletter]";counter-=1
 	return newphrase
 
-// TODO:CYRILLIC использовать lowertext_plus
+// TODO:CYRILLIC пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ lowertext_plus
 /proc/stutter(text)
 	text = html_decode(text)
 	var/t = ""
@@ -253,7 +253,7 @@ It's fairly easy to fix if dealing with single letters but not so much with comp
 	if(!M || !M.client || !strength) return
 	spawn()
 		strength *= 32
-		for(var/i=0; i<duration, i++)
+		for(var/i=0; i<duration; i++)
 			animate(M.client, pixel_x = rand(-strength,strength), pixel_y = rand(-strength,strength), time = 2)
 			sleep(2)
 		animate(M.client, pixel_x = 0, pixel_y = 0, time = 0)
