@@ -47,7 +47,7 @@
 	return attack_hand(M)
 
 /obj/multiz/ladder/attackby(obj/item/C as obj, mob/user as mob)
-	(..)
+	..()
 	src.attack_hand(user)
 	return
 

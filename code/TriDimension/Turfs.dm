@@ -91,7 +91,7 @@
 	return
 
 /turf/simulated/floor/open/attackby(obj/item/C as obj, mob/user as mob)
-	(..)
+	..()
 	if (istype(C, /obj/item/weapon/cable_coil))
 		var/obj/item/weapon/cable_coil/cable = C
 		cable.turf_place(src, user)
