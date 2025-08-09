@@ -3046,7 +3046,7 @@ datum
 					d*=5
 
 
-				M.dizziness += dizzy_adj.
+				M.dizziness += dizzy_adj
 				if(d >= slur_start && d < pass_out)
 					if (!M:slurring) M:slurring = 1
 					M:slurring += slurr_adj
