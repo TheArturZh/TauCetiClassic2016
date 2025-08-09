@@ -1,5 +1,5 @@
 /mob/living/carbon/human
-	var metadata
+	var/metadata
 
 /mob/living/carbon/human/verb/examine_ooc()
 	set name = "Examine OOC"

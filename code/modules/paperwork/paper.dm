@@ -352,7 +352,7 @@
 		while(index)
 			t = copytext(t, 1, index) + "&#1103;" + copytext(t, index+8)
 			index = findtext(t, LETTER_255)*/
-		t = sanitize_alt(t, list("\n"="\[br\]","ÿ"=LETTER_255))
+		t = sanitize_alt(t, list("\n"="\[br\]","ï¿½"=LETTER_255))
 
 		// check for exploits
 		for(var/bad in paper_blacklist)
@@ -451,7 +451,8 @@
 		stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [P.name].</i>"
 
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
-		var/{x; y;}
+		var/x;
+		var/y;
 		if(istype(P, /obj/item/weapon/stamp/captain) || istype(P, /obj/item/weapon/stamp/centcomm))
 			x = rand(-2, 0)
 			y = rand(-1, 2)

@@ -240,34 +240,34 @@ var/list/sharing_lookup_table = list(0.30, 0.40, 0.48, 0.54, 0.60, 0.66)
 
 proc/ShareRatio(datum/gas_mixture/A, datum/gas_mixture/B, connecting_tiles)
 	//Shares a specific ratio of gas between mixtures using simple weighted averages.
-	var
-		//WOOT WOOT TOUCH THIS AND YOU ARE A RETARD
-		ratio = sharing_lookup_table[6]
-		//WOOT WOOT TOUCH THIS AND YOU ARE A RETARD
 
-		size = max(1,A.group_multiplier)
-		share_size = max(1,B.group_multiplier)
+	//WOOT WOOT TOUCH THIS AND YOU ARE A RETARD
+	var/ratio = sharing_lookup_table[6]
+	//WOOT WOOT TOUCH THIS AND YOU ARE A RETARD
 
-		full_oxy = A.oxygen * size
-		full_nitro = A.nitrogen * size
-		full_co2 = A.carbon_dioxide * size
-		full_phoron = A.phoron * size
+	var/size = max(1,A.group_multiplier)
+	var/share_size = max(1,B.group_multiplier)
 
-		full_heat_capacity = A.heat_capacity() * size
+	var/full_oxy = A.oxygen * size
+	var/full_nitro = A.nitrogen * size
+	var/full_co2 = A.carbon_dioxide * size
+	var/full_phoron = A.phoron * size
 
-		s_full_oxy = B.oxygen * share_size
-		s_full_nitro = B.nitrogen * share_size
-		s_full_co2 = B.carbon_dioxide * share_size
-		s_full_phoron = B.phoron * share_size
+	var/full_heat_capacity = A.heat_capacity() * size
 
-		s_full_heat_capacity = B.heat_capacity() * share_size
+	var/s_full_oxy = B.oxygen * share_size
+	var/s_full_nitro = B.nitrogen * share_size
+	var/s_full_co2 = B.carbon_dioxide * share_size
+	var/s_full_phoron = B.phoron * share_size
 
-		oxy_avg = (full_oxy + s_full_oxy) / (size + share_size)
-		nit_avg = (full_nitro + s_full_nitro) / (size + share_size)
-		co2_avg = (full_co2 + s_full_co2) / (size + share_size)
-		phoron_avg = (full_phoron + s_full_phoron) / (size + share_size)
+	var/s_full_heat_capacity = B.heat_capacity() * share_size
 
-		temp_avg = (A.temperature * full_heat_capacity + B.temperature * s_full_heat_capacity) / (full_heat_capacity + s_full_heat_capacity)
+	var/oxy_avg = (full_oxy + s_full_oxy) / (size + share_size)
+	var/nit_avg = (full_nitro + s_full_nitro) / (size + share_size)
+	var/co2_avg = (full_co2 + s_full_co2) / (size + share_size)
+	var/phoron_avg = (full_phoron + s_full_phoron) / (size + share_size)
+
+	var/temp_avg = (A.temperature * full_heat_capacity + B.temperature * s_full_heat_capacity) / (full_heat_capacity + s_full_heat_capacity)
 
 	//WOOT WOOT TOUCH THIS AND YOU ARE A RETARD
 	if(sharing_lookup_table.len >= connecting_tiles) //6 or more interconnecting tiles will max at 42% of air moved per tick.
@@ -324,15 +324,14 @@ proc/ShareSpace(datum/gas_mixture/A, list/unsimulated_tiles, dbg_output)
 	if(!unsimulated_tiles)
 		return 0
 
-	var
-		unsim_oxygen = 0
-		unsim_nitrogen = 0
-		unsim_co2 = 0
-		unsim_phoron = 0
-		unsim_heat_capacity = 0
-		unsim_temperature = 0
+	var/unsim_oxygen = 0
+	var/unsim_nitrogen = 0
+	var/unsim_co2 = 0
+	var/unsim_phoron = 0
+	var/unsim_heat_capacity = 0
+	var/unsim_temperature = 0
 
-		size = max(1,A.group_multiplier)
+	var/size = max(1,A.group_multiplier)
 
 	var/tileslen
 	var/share_size
@@ -381,24 +380,23 @@ proc/ShareSpace(datum/gas_mixture/A, list/unsimulated_tiles, dbg_output)
 
 	unsim_heat_capacity = HEAT_CAPACITY_CALCULATION(unsim_oxygen, unsim_co2, unsim_nitrogen, unsim_phoron)
 
-	var
-		ratio = sharing_lookup_table[6]
+	var/ratio = sharing_lookup_table[6]
 
-		old_pressure = A.return_pressure()
+	var/old_pressure = A.return_pressure()
 
-		full_oxy = A.oxygen * size
-		full_nitro = A.nitrogen * size
-		full_co2 = A.carbon_dioxide * size
-		full_phoron = A.phoron * size
+	var/full_oxy = A.oxygen * size
+	var/full_nitro = A.nitrogen * size
+	var/full_co2 = A.carbon_dioxide * size
+	var/full_phoron = A.phoron * size
 
-		full_heat_capacity = A.heat_capacity() * size
+	var/full_heat_capacity = A.heat_capacity() * size
 
-		oxy_avg = (full_oxy + unsim_oxygen*share_size) / (size + share_size)
-		nit_avg = (full_nitro + unsim_nitrogen*share_size) / (size + share_size)
-		co2_avg = (full_co2 + unsim_co2*share_size) / (size + share_size)
-		phoron_avg = (full_phoron + unsim_phoron*share_size) / (size + share_size)
+	var/oxy_avg = (full_oxy + unsim_oxygen*share_size) / (size + share_size)
+	var/nit_avg = (full_nitro + unsim_nitrogen*share_size) / (size + share_size)
+	var/co2_avg = (full_co2 + unsim_co2*share_size) / (size + share_size)
+	var/phoron_avg = (full_phoron + unsim_phoron*share_size) / (size + share_size)
 
-		temp_avg = 0
+	var/temp_avg = 0
 
 	if((full_heat_capacity + unsim_heat_capacity) > 0)
 		temp_avg = (A.temperature * full_heat_capacity + unsim_temperature * unsim_heat_capacity) / (full_heat_capacity + unsim_heat_capacity)
